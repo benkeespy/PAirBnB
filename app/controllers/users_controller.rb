@@ -17,7 +17,7 @@ class UsersController < Clearance::UsersController
 	 def edit
 	 end
 	 	
-	 end
+	 
 
 	 def create
 	   @user = user_from_params

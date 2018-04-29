@@ -1,0 +1,36 @@
+<h2>Name : <%= @listing.name %></h2>
+<h3>Description : <%= @listing.description %></h3>
+<h3>Location : <%= @listing.street_address+ " " + @listing.city + " " + @listing.state %></h3>
+
+
+<h3> Type of Accommodation : <%= @listing.type_of_accommodation %></h3>
+<h3>Number of Rooms : <%= @listing.number_rooms %></h3>
+
+<h3>Verification Status: <%= @listing.verification_status%></h3>
+
+
+<%= link_to "Back", listings_path %>
+
+<% if signed_in? %>
+	
+
+
+	<% if @listing.user_id == current_user.id %>
+
+
+	<%= link_to "Edit", edit_listing_path(@listing)%>
+
+	<%= link_to "Delete", listing_path(@listing), method: :delete, data: { confirm: " Are you Sure Brah? Think Again!"} %>
+
+	<% end -%>
+
+	<%if current_user.admin? %>
+
+	<%= link_to "Verify", listing_verify_path(@listing) %>
+
+	<% end %>
+
+<% end %>
+
+<%= link_to "Listings", listings_path(@listing)%>
+
