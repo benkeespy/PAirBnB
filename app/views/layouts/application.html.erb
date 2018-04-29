@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Airbnb</title>
+    <title>Pear-bnb</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,53 @@
   </head>
 
   <body>
+
+	<nav class="navbar navbar-default">
+		
+	<div class="container">
+
+
+		<div class="navbar-header">
+			<%= link_to "Pear-bnb", root_path, class: "navbar-brand" %>
+			
+
+		</div>
+
+		<ul class="nav navbar-nav">
+			
+				<li><%= link_to "Sign up", new_user_path %></li>
+			
+				<% if signed_in? %>
+				<li><%= link_to "Sign Out", sign_out_path %></li>
+				
+				<% else %>
+				
+				<li> <%= link_to "Log in", sign_in_path %></li>
+			
+				<% end %>
+		
+		</ul >
+		
+		
+		<ul class="nav navbar-nav navbar-right">
+		<% if signed_in? %>
+		
+		<li><%= link_to "Add Home", new_listing_path %></li>
+		<% end %>	
+
+		</ul>
+		
+
+	</div>
+
+
+
+	</nav>
+	<% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+
     <%= yield %>
   </body>
 </html>

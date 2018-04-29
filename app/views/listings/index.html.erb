@@ -1,0 +1,17 @@
+<h1>Listings posted: </h1>
+
+
+<% @listing.each do |listing| %>
+
+<h2><%= link_to listing.name, listing_path(listing) %></h2>
+<% end %>
+<p> </p> 
+
+<%= paginate @listing %>
+
+<p></p>
+
+<%= link_to 'Add Listing', new_listing_path %>
+
+
+

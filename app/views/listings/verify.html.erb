@@ -1,0 +1,14 @@
+
+<%= simple_form_for @listing do |f| %>
+
+
+<%= f.input :verification_status, collection: ["verified", "not_verified"] %>
+
+<%= f.button :submit %>
+
+
+<% end -%>
+
+
+
+

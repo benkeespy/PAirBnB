@@ -1,4 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
+  
+  has_many :listings
+  
   def change
     create_table :users do |t|
       t.timestamps null: false

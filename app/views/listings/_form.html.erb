@@ -1,0 +1,25 @@
+<%= simple_form_for @listing do |f|%>
+	
+	<%= f.input :name %>
+	<%= f.input :description %>
+	<%= f.input :type_of_accommodation, label: "Type of Accommodation" %>
+	<%= f.input :price  %>
+
+	<%= f.input :number_rooms  %>
+	<%= f.input :number_beds  %>
+	<%= f.input :guest_number  %>
+	
+	<%= f.input :street_address  %>
+	<%= f.input :zip_code  %>
+	<%= f.input :city  %>
+	<%= f.input :state  %>
+	<%= f.input :country  %>
+
+	<%= f.button :submit %>
+
+
+	<% end -%>
+
+	<%= link_to "Listings", listings_path(@listing)%>
+
+
